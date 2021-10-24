@@ -14,6 +14,6 @@ public final class Once<T> {
     }
 
     deinit {
-        assert(value == nil, "Block must be called once")
+        assert(value == nil, "Wrapped value must be accessed once")
     }
 }
