@@ -6,7 +6,7 @@ final class OnceCompletionTests: XCTestCase {
     func testOnceWithoutParams() {
         func testOnce(@Once completion: @escaping () -> Void) {
             completion()
-            XCTAssert($completion == nil)
+            XCTAssertFalse($completion)
         }
 
         testOnce {
@@ -18,9 +18,9 @@ final class OnceCompletionTests: XCTestCase {
         let exp = expectation(description: "Test")
         func testOnce(@Once completion: @escaping (Int) -> Void) {
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                XCTAssert($completion != nil)
+                XCTAssertTrue($completion)
                 completion(1)
-                XCTAssert($completion == nil)
+                XCTAssertFalse($completion)
             }
         }
 

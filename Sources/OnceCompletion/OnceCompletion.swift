@@ -7,7 +7,7 @@ public final class Once<T> {
         return value // If crash here, then twice called
     }
 
-    public var projectedValue: T? { value }
+    public var projectedValue: Bool { value != nil }
 
     public init(wrappedValue value: T) {
         self.value = value
