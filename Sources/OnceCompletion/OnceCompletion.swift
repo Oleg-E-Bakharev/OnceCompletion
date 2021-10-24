@@ -14,8 +14,6 @@ public final class Once<T> {
     }
 
     deinit {
-        guard value == nil else {
-            assert(false, "Block must be called once")
-        }
+        assert(value == nil, "Block must be called once")
     }
 }
