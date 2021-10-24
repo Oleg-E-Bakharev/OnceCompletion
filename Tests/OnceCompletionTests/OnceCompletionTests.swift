@@ -1,8 +1,8 @@
 import XCTest
-@testable import OnceCompletion
+import OnceCompletion
 
 final class OnceCompletionTests: XCTestCase {
-    func testOnceZ() {
+    func testOnceWithoutParams() {
         func testOnce(@Once completion: @escaping () -> Void) {
             completion()
         }
@@ -12,7 +12,7 @@ final class OnceCompletionTests: XCTestCase {
         }
     }
 
-    func testOnce() {
+    func testOnceWithParam() {
         func testOnce(@Once completion: @escaping (Int) -> Void) {
             completion(1)
         }
@@ -21,5 +21,4 @@ final class OnceCompletionTests: XCTestCase {
             print("Complete value: \(value)")
         }
     }
-
 }
