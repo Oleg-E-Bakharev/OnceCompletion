@@ -9,6 +9,8 @@ public final class Once<T> {
         }
     }
 
+    public var projectedValue: T? { value }
+
     public init(wrappedValue value: T) {
         self.value = value
     }
