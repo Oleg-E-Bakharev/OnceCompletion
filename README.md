@@ -38,4 +38,5 @@ final class OnceCompletionTests: XCTestCase {
 
         waitForExpectations(timeout: 1)
     }
-}```
+}
+```
